@@ -20,6 +20,10 @@ class Program
             {
                 sign = "-";
             }
+            else if (rem == 0)
+            {
+                sign = "";
+            }
         }
         else if (grade >= 80)
         {
@@ -31,6 +35,10 @@ class Program
             else if (rem < 3)
             {
                 sign = "-";
+            }
+            else if (rem == 0)
+            {
+                sign = "";
             }
         }
         else if (grade >= 70)
@@ -44,6 +52,10 @@ class Program
             {
                 sign = "-";
             }
+            else if (rem == 0)
+            {
+                sign = "";
+            }
         }
         else if (grade >= 60)
         {
@@ -55,6 +67,10 @@ class Program
             else if (rem < 3)
             {
                 sign = "-";
+            }
+            else if (rem == 0)
+            {
+                sign = "";
             }
         }
         else
