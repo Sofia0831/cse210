@@ -16,11 +16,11 @@ class Program
         if (grade >= 90)
         {
             letter = "A";
-            if (rem < 3 && rem != 0)
+            if (rem < 3)
             {
                 sign = "-";
             }
-            else if (rem == 0)
+            else
             {
                 sign = "";
             }
@@ -32,7 +32,7 @@ class Program
             {
                 sign = "+";
             }
-            else if (rem < 3 && rem != 0)
+            else if (rem < 3)
             {
                 sign = "-";
             }
@@ -48,7 +48,7 @@ class Program
             {
                 sign = "+";
             }
-            else if (rem < 3 && rem != 0)
+            else if (rem < 3)
             {
                 sign = "-";
             }
@@ -64,7 +64,7 @@ class Program
             {
                 sign = "+";
             }
-            else if (rem < 3 && rem != 0)
+            else if (rem < 3)
             {
                 sign = "-";
             }
