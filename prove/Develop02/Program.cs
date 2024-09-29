@@ -11,7 +11,7 @@ class Program
         Console.WriteLine("Welcome to the Journal Program!");
         string userInput = "";
 
-        while (userInput != "5")
+        while (userInput != "6")
         {
             Console.WriteLine("");
             Console.WriteLine("Please select one of the following choices:");
@@ -19,7 +19,8 @@ class Program
             Console.WriteLine("2. Display");
             Console.WriteLine("3. Load");
             Console.WriteLine("4. Save");
-            Console.WriteLine("5. Quit");
+            Console.WriteLine("5. Delete");
+            Console.WriteLine("6. Quit");
             Console.Write("What would you like to do? ");
 
             userInput = Console.ReadLine();
@@ -50,9 +51,14 @@ class Program
             }
             else if (userInput == "5")
             {
+                Console.WriteLine("Enter the filename to delete:");
+                string filenameToDelete = Console.ReadLine();
+                journal.DeleteFile(filenameToDelete);
+            }
+            else if (userInput == "6")
+            {
                 Console.WriteLine("Thank you for using the Journal Program!");
                 Console.WriteLine("");
-                break;
             }
             else 
             {

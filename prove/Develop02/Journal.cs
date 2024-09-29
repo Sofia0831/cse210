@@ -75,4 +75,17 @@ public class Journal {
 
         Console.WriteLine("Journal loaded successfully!");
     }
+
+    public void DeleteFile(string filename) 
+    {
+        if (File.Exists(filename))
+        {
+            File.Delete(filename);
+            Console.WriteLine("File deleted successfully.");
+        }
+        else
+        {
+            Console.WriteLine("Sorry, file not found.");
+        }
+    }
 }
