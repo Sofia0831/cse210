@@ -51,7 +51,7 @@ class Program
             }
             else if (userInput == "5")
             {
-                Console.WriteLine("Enter the filename to delete:");
+                Console.Write("Enter the filename: ");
                 string filenameToDelete = Console.ReadLine();
                 journal.DeleteFile(filenameToDelete);
             }
