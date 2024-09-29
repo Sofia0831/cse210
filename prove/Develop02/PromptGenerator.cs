@@ -6,7 +6,7 @@ public class PromptGenerator
         "What are you grateful for today?",
         "Describe your ideal day",  
         "What is a positive habit that would really like to cultivate?",
-        "What is something you wish you done today?",
+        "What is something you wish you had done today?",
         "Write about something that inspired you.",
         "What are you nervous or anxious about today?",
         "What did you learn today and how can you apply this knowledge?",

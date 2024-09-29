@@ -15,7 +15,7 @@ public class Entry {
         Console.WriteLine("");
         Console.WriteLine($"Entry #{EntryNum} - {Date}");
         Console.WriteLine($"Prompt: {PromptText}");
-        Console.WriteLine($"{EntryText}");
+        Console.WriteLine($"'{EntryText}'");
     }
 
 }
