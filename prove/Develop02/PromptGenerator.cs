@@ -20,15 +20,12 @@ public class PromptGenerator
         "Describe your typical day, from wake to sleep."
     };
 
- 
-
-
     public string GetRandomPrompt() 
     {
         Random random = new Random();
         int index = random.Next(_prompts.Count);
-        string journalPrompt = _prompts[index];
-        return journalPrompt;
+        string JournalPrompt = _prompts[index];
+        return JournalPrompt;
 ;    }
     
 }
