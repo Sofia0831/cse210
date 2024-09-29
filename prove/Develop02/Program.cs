@@ -48,6 +48,10 @@ class Program
                 string saveFilename = Console.ReadLine();
                 journal.SaveToFile(saveFilename);
             }
+            else 
+            {
+                Console.WriteLine("Please enter a number from the options provided.");
+            }
             
         }   
 
