@@ -7,6 +7,7 @@ class Program
         Journal journal = new Journal();
         PromptGenerator promptGenerator = new PromptGenerator();
 
+        Console.WriteLine("");
         Console.WriteLine("Welcome to the Journal Program!");
         string userInput = "";
 
