@@ -18,6 +18,7 @@ class Program
             Console.WriteLine("3. Load");
             Console.WriteLine("4. Save");
             Console.WriteLine("5. Quit");
+            Console.Write("What would you like to do? ");
 
             userInput = Console.ReadLine();
 
@@ -25,6 +26,7 @@ class Program
             {
                 string prompt = promptGenerator.GetRandomPrompt();
                 Console.WriteLine($"Excellent! Your prompt is: {prompt}");
+                Console.Write(">");
                 string response = Console.ReadLine();
                 journal.AddEntry(new Entry(DateTime.Now.ToString(), prompt, response));
             }
