@@ -3,6 +3,11 @@ public class Journal {
 
     public void AddEntry(Entry newEntry)
     {
+        if (string.IsNullOrEmpty(newEntry.EntryText))
+    {
+        Console.WriteLine("Sorry, entry cannot be empty.");
+        return;
+    }
         newEntry.EntryNum = Entries.Count + 1;
         Entries.Add(newEntry);
     }
@@ -24,12 +29,19 @@ public class Journal {
 
     public void SaveToFile(string file)
     {  
-        using (StreamWriter writer = new StreamWriter(file))
+        if (Entries.Count == 0)
+        {
+            Console.WriteLine("Sorry, there is currently nothing to save");
+        }
+        else 
+        {
+            using (StreamWriter writer = new StreamWriter(file))
         {
             foreach (var entry in Entries)
             {
                 writer.WriteLine($"{entry.EntryNum}|{entry.Date.ToString()}|{entry.PromptText}|{entry.EntryText}");
             }
+        }
         }
 
         Console.WriteLine("Journal saved successfully! Thank you for your time, I hope you were able to write substantially.");
@@ -37,6 +49,12 @@ public class Journal {
 
     public void LoadFromFile(string file)
     {
+        if (!File.Exists(file))
+    {
+        Console.WriteLine("File not found.");
+        return;
+    }
+    
         Entries.Clear();
 
         using (StreamReader reader = new StreamReader(file))
