@@ -4,10 +4,11 @@ public class Journal {
     public void AddEntry(Entry newEntry)
     {
         if (string.IsNullOrEmpty(newEntry.EntryText))
-    {
-        Console.WriteLine("Sorry, entry cannot be empty.");
-        return;
-    }
+        {
+            Console.WriteLine("Sorry, entry cannot be empty.");
+            return;
+        }
+
         newEntry.EntryNum = Entries.Count + 1;
         Entries.Add(newEntry);
     }
@@ -20,9 +21,10 @@ public class Journal {
         }
         else
         {
-            foreach (var entry in Entries) {
-            entry.DisplayEntry();
-        }
+            foreach (var entry in Entries) 
+            {
+                entry.DisplayEntry();
+            }
         }
     
     }
@@ -36,13 +38,13 @@ public class Journal {
         else 
         {
             using (StreamWriter writer = new StreamWriter(file))
-        {
-            foreach (var entry in Entries)
             {
-                writer.WriteLine($"{entry.EntryNum}|{entry.Date.ToString()}|{entry.PromptText}|{entry.EntryText}");
+                foreach (var entry in Entries)
+                {
+                    writer.WriteLine($"{entry.EntryNum}|{entry.Date.ToString()}|{entry.PromptText}|{entry.EntryText}");
+                }
             }
-        }
-        Console.WriteLine("Journal saved successfully! Thank you for your time, I hope you were able to write substantially.");
+            Console.WriteLine("Journal saved successfully! Thank you for your time, I hope you were able to write substantially.");
         }
 
     }
@@ -50,10 +52,10 @@ public class Journal {
     public void LoadFromFile(string file)
     {
         if (!File.Exists(file))
-    {
-        Console.WriteLine("Sorry, file not found.");
-        return;
-    }
+        {
+            Console.WriteLine("Sorry, file not found.");
+            return;
+        }
 
         Entries.Clear();
 
