@@ -48,6 +48,12 @@ class Program
                 string saveFilename = Console.ReadLine();
                 journal.SaveToFile(saveFilename);
             }
+            else if (userInput == "5")
+            {
+                Console.WriteLine("Thank you for using the Journal Program!");
+                Console.WriteLine("");
+                break;
+            }
             else 
             {
                 Console.WriteLine("Please enter a number from the options provided.");

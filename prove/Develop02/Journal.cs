@@ -42,19 +42,19 @@ public class Journal {
                 writer.WriteLine($"{entry.EntryNum}|{entry.Date.ToString()}|{entry.PromptText}|{entry.EntryText}");
             }
         }
+        Console.WriteLine("Journal saved successfully! Thank you for your time, I hope you were able to write substantially.");
         }
 
-        Console.WriteLine("Journal saved successfully! Thank you for your time, I hope you were able to write substantially.");
     }
 
     public void LoadFromFile(string file)
     {
         if (!File.Exists(file))
     {
-        Console.WriteLine("File not found.");
+        Console.WriteLine("Sorry, file not found.");
         return;
     }
-    
+
         Entries.Clear();
 
         using (StreamReader reader = new StreamReader(file))
