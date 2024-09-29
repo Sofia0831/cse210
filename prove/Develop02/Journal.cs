@@ -9,9 +9,17 @@ public class Journal {
 
     public void DisplayAll()
     {
-        foreach (var entry in Entries) {
+        if (Entries.Count == 0)
+        {
+            Console.WriteLine("Sorry, there is currently nothing to display");
+        }
+        else
+        {
+            foreach (var entry in Entries) {
             entry.DisplayEntry();
         }
+        }
+    
     }
 
     public void SaveToFile(string file)

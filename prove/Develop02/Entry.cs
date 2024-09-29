@@ -12,7 +12,7 @@ public class Entry {
     }
     public void DisplayEntry()
     {
-        // Console.WriteLine($"{_date} - Prompt: {_journalPrompt} - Entry: {_entryText}");
+        Console.WriteLine("");
         Console.WriteLine($"Entry #{EntryNum} - {Date}");
         Console.WriteLine($"Prompt: {PromptText}");
         Console.WriteLine($"{EntryText}");

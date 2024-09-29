@@ -12,6 +12,7 @@ class Program
 
         while (userInput != "5")
         {
+            Console.WriteLine("");
             Console.WriteLine("Please select one of the following choices:");
             Console.WriteLine("1. Write");
             Console.WriteLine("2. Display");
@@ -26,7 +27,7 @@ class Program
             {
                 string prompt = promptGenerator.GetRandomPrompt();
                 Console.WriteLine($"Excellent! Your prompt is: {prompt}");
-                Console.Write(">");
+                Console.Write("> ");
                 string response = Console.ReadLine();
                 journal.AddEntry(new Entry(DateTime.Now.ToString(), prompt, response));
             }
