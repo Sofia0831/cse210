@@ -2,7 +2,7 @@ public class PromptGenerator
  {
     public  List<string>_prompts {get; set;} = new List<string>() 
     {
-      "What is your biggest dream?",
+        "What is your biggest dream?",
         "What are you grateful for today?",
         "Describe your ideal day",  
         "What is a positive habit that would really like to cultivate?",
