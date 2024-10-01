@@ -49,7 +49,7 @@ class Program
                 string saveFilename = Console.ReadLine();
                 journal.SaveToFile(saveFilename);
             }
-            else if (userInput == "5")
+            else if (userInput == "5") //Added an option to delete a journal entry or file
             {
                 Console.Write("Enter the filename: ");
                 string filenameToDelete = Console.ReadLine();
