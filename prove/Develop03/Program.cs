@@ -43,7 +43,8 @@ class Program
 
         Scripture scripture = new Scripture(theReference, text);
         Console.Clear();
-        Console.WriteLine(scripture.GetDisplayText()); 
+        Console.WriteLine(scripture.GetDisplayText());
+        Console.WriteLine("\nPress Enter key to continue or type 'quit' to exit."); 
 
         while (true)
         {
@@ -61,7 +62,7 @@ class Program
             }
             else
             {
-                Console.WriteLine("\nYou got this, you memorized the scripture!");
+                Console.WriteLine("\nGreat work! You memorized that like a pro!");
                 break;
             }
             Console.WriteLine(scripture.GetDisplayText());
