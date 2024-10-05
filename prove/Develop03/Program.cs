@@ -6,6 +6,8 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Welcome to the Scripture Memorization Tool!");
+
+        //user can add their own scripture to memorize
         Reference theReference = new(book:"", chapter:0, verse:0); 
         Console.WriteLine("To start, enter the scripture reference (Book, Chapter, Verse(s)): ");
         string[] inRef = Console.ReadLine().Split(",");
@@ -16,11 +18,9 @@ class Program
                 Environment.Exit(0);
             }
 
-            // Extract book and chapter
             string book = inRef[0];
             int chapter = int.Parse(inRef[1]);
 
-            // Handle multiple verses or single verse
             if (inRef.Length == 3)
             {
                 int verse = int.Parse(inRef[2]);
