@@ -43,7 +43,7 @@ class Program
 
         Scripture scripture = new Scripture(theReference, text);
         Console.Clear();
-        Console.WriteLine(scripture.GetDisplayText());
+        Console.WriteLine($"{theReference.GetDisplayText()}: {scripture.GetDisplayText()}");
         Console.WriteLine("\nPress Enter key to continue or type 'quit' to exit."); 
 
         while (true)
@@ -58,14 +58,14 @@ class Program
             {
                 scripture.HideRandomWords(3);
                 Console.Clear();
-                scripture.GetDisplayText();
+                Console.WriteLine($"{theReference.GetDisplayText()}: {scripture.GetDisplayText()}");
             }
             else
             {
                 Console.WriteLine("\nGreat work! You memorized that like a pro!");
                 break;
             }
-            Console.WriteLine(scripture.GetDisplayText());
+            
             Console.WriteLine("\nPress Enter to continue or type 'quit' to exit.");
         }
     }
