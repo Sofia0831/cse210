@@ -65,8 +65,8 @@ class Program
                 Console.WriteLine("\nGreat work! You memorized that like a pro!");
                 break;
             }
-            
-            Console.WriteLine("\nPress Enter to continue or type 'quit' to exit.");
+
+            Console.WriteLine("\nPress Enter key to continue or type 'quit' to exit.");
         }
     }
 
