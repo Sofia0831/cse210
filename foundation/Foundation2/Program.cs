@@ -37,6 +37,5 @@ class Program
             Console.WriteLine("Total Cost: $" + order.CalculateTotal());
             Console.WriteLine("");
         }
-        Console.WriteLine("");
     }
 }
