@@ -4,7 +4,6 @@ class Program
 {
     static void Main(string[] args)
     {
-
         List<Video> videos = new List<Video>();
 
         videos.Add(new Video("Watch Me Absolutely Fail the QTEs (The Quarry Gameplay Part 1)", "puddinheadgaming", 3600));
@@ -16,7 +15,7 @@ class Program
         videos[0].AddComment(new Comment("ciaraKins", "The dialogue in this game is so awkward its perfect"));
         videos[0].AddComment(new Comment("Rosaliawins", "pls they did ryan so dirty with those freeze frames lmaooo"));
 
-        videos[1].AddComment(new Comment("philoSofia", "How is N not even a 10?? blasphemy/hj"));
+        videos[1].AddComment(new Comment("philoSofia", "How is N not even a 10?? blasphemy /hj"));
         videos[1].AddComment(new Comment("ShawnTheSheep", "this is very subjective AND VERY WRONG"));
         videos[1].AddComment(new Comment("yuitheGreat", "Steven deserves better than this smh"));
 
@@ -27,7 +26,6 @@ class Program
         videos[2].AddComment(new Comment("Havenhell", "never doing this again btw dont want all that stress ever again <3<3"));
         videos[2].AddComment(new Comment("Alinathebeloved", "Haven :(("));
 
-
         Console.WriteLine();
         foreach (var video in videos)
         {
@@ -37,7 +35,6 @@ class Program
             Console.WriteLine("Number of Comments: " + video.CountComment());
             Console.WriteLine();
             Console.WriteLine("Comments:");
-            
             foreach (var comment in video.GetComments())
             {
                 Console.WriteLine(comment.GetCommentName() + ": " + comment.GetCommentText());
