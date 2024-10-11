@@ -18,15 +18,14 @@ class Program
         Product product7 = new Product("Sugar", 193, 7.25, 1);
         Product product8 = new Product("Egg", 921, 5.00, 12);
         Product product9 = new Product("Butter", 281, 12.99, 1);
-        Product product10 = new Product("Vanilla Extract", 672, 10.00, 1);
-        Product product11 = new Product("Milk", 612, 20.00, 1);
+        Product product10 = new Product("Milk", 612, 20.00, 1);
 
         Address address2 = new Address("456 Main Street", "Somewheretown", "NY", "United States", "1234");
         Customer customer2 = new Customer("Alina Santos", address2);
 
         List<Order> orders = new List<Order>();
         orders.Add(new Order(new List<Product>{product1, product2, product3, product4}, customer1));
-        orders.Add(new Order(new List<Product>{product5, product6, product7, product8, product9, product10, product11}, customer2));
+        orders.Add(new Order(new List<Product>{product5, product6, product7, product8, product9, product10}, customer2));
 
         Console.WriteLine("");
         foreach (var order in orders)
