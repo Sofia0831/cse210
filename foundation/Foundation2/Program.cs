@@ -28,6 +28,7 @@ class Program
         orders.Add(new Order(new List<Product>{product1, product2, product3, product4}, customer1));
         orders.Add(new Order(new List<Product>{product5, product6, product7, product8, product9, product10, product11}, customer2));
 
+        Console.WriteLine();
         foreach (var order in orders)
         {
             Console.WriteLine(order.GetPackingLabel());
