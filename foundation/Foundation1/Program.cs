@@ -31,7 +31,7 @@ class Program
 
 
 
-        //test to see the program works
+        //print test
         // Console.WriteLine();
         // foreach (var video in videos)
         // {
