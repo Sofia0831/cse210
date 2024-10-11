@@ -19,23 +19,21 @@ public class Video {
         _comments.Add(comment);
     }
 
+    public string GetTitle(){
+        return _title;
+    }
 
-    //test program
-    // public string GetTitle(){
-    //     return _title;
-    // }
+    public string GetAuthor(){
+        return _author;
+    }
 
-    // public string GetAuthor(){
-    //     return _author;
-    // }
+    public int GetLength(){
+        return _length;
+    }
 
-    // public int GetLength(){
-    //     return _length;
-    // }
-
-    // public IEnumerable<Comment> GetComments()
-    // {
-    //     return _comments.AsReadOnly();
-    // }
+    public IEnumerable<Comment> GetComments()
+    {
+        return _comments.AsReadOnly();
+    }
 
 }

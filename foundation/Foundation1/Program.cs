@@ -28,24 +28,21 @@ class Program
         videos[2].AddComment(new Comment("Alinathebeloved", "Haven :(("));
 
 
-
-
-
-        //print test
-        // Console.WriteLine();
-        // foreach (var video in videos)
-        // {
-        //     Console.WriteLine("Video Title: " + video.GetTitle());
-        //     Console.WriteLine("Author: " + video.GetAuthor());
-        //     Console.WriteLine("Length: " + video.GetLength() + " seconds");
-        //     Console.WriteLine("Number of Comments: " + video.CountComment());
-        //     Console.WriteLine();
-
-        //      foreach (var comment in video.GetComments())
-        //     {
-        //         Console.WriteLine(comment.GetCommentName() + ": " + comment.GetCommentText());
-        //     }
-        //     Console.WriteLine();
-        // }
+        Console.WriteLine();
+        foreach (var video in videos)
+        {
+            Console.WriteLine("Video Title: " + video.GetTitle());
+            Console.WriteLine("Author: " + video.GetAuthor());
+            Console.WriteLine("Length: " + video.GetLength() + " seconds");
+            Console.WriteLine("Number of Comments: " + video.CountComment());
+            Console.WriteLine();
+            Console.WriteLine("Comments:");
+            
+            foreach (var comment in video.GetComments())
+            {
+                Console.WriteLine(comment.GetCommentName() + ": " + comment.GetCommentText());
+            }
+            Console.WriteLine();
+        }
     }
 }

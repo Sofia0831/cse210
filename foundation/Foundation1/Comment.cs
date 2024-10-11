@@ -6,16 +6,14 @@ public class Comment {
         _name = name;
         _text = text;
     }
+    
+    public string GetCommentName()
+    {
+        return _name;
+    }
 
-
-    //test
-    // public string GetCommentName()
-    // {
-    //     return _name;
-    // }
-
-    // public string GetCommentText()
-    // {
-    //     return _text;
-    // }
+    public string GetCommentText()
+    {
+        return _text;
+    }
 }
