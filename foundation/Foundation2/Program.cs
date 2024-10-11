@@ -33,6 +33,7 @@ class Program
         {
             Console.WriteLine(order.GetPackingLabel());
             Console.WriteLine(order.GetShippingLabel());
+            Console.WriteLine("--------------------");
             Console.WriteLine("Total Cost: $" + order.CalculateTotal());
             Console.WriteLine();
         }
