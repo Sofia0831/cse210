@@ -6,7 +6,7 @@ class Program
     {
         Console.WriteLine("Hello Develop05 World!");
 
-        ListingActivity activity = new ListingActivity();
+        ReflectingActivity activity = new ReflectingActivity();
         activity.Run();
     }
 }
