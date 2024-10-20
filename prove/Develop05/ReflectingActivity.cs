@@ -68,7 +68,6 @@ public class ReflectingActivity : Activity
     {
         string prompt = GetRandomPrompt();
         Console.WriteLine($"Reflect on your prompt: {prompt}");
-        Console.WriteLine();
     }
 
     private void DisplayQuestions()
