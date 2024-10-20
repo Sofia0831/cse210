@@ -51,8 +51,8 @@ public abstract class Activity
         Console.WriteLine($"Duration: {_duration} seconds");
         ShowSpinner(5);
         Console.WriteLine();
-        Console.WriteLine("Program Ended");
-        Console.WriteLine("Thank you for using the program, have a great day!");
+        Console.WriteLine("Activity Ended");
+        Console.WriteLine("Is there anything else you would like to do?");
         Console.WriteLine();
     }
 
