@@ -1,14 +1,16 @@
-public class Activity 
+using System;
+using System.Collections.Generic;
+
+public abstract class Activity 
 {
     protected string _name;
     protected string _description;
     protected int _duration;
 
-    public Activity(string name, string description, int duration = 0)
+    public Activity(string name, string description)
     {
         _name = name;
         _description = description;
-        _duration = duration;
     }
 
     public void Start()
@@ -30,14 +32,14 @@ public class Activity
         return _duration;
     }
 
-    public void DisplayStartingMessage()
+    private void DisplayStartingMessage()
     {
         Console.WriteLine($"Welcome to the {_name} Activity");
         Console.WriteLine($"{_description}");
         SetDuration();  
     }
 
-    public void DisplayEndingMessage()
+    public void End()
     {
         Console.WriteLine("Great job, I'm proud of you!");
         ShowSpinner(3);
