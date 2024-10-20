@@ -1,4 +1,3 @@
-using System.Xml;
 
 public class ListingActivity : Activity
 {
