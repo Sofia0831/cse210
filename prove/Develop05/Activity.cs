@@ -44,7 +44,9 @@ public class Activity
         Console.WriteLine($"Activity Completed: {_name}");
         Console.WriteLine($"Duration: {_duration} seconds");
         ShowSpinner(5);
+        Console.WriteLine("Program Ended");
     }
+
 
     public void ShowSpinner(int seconds)
     {
