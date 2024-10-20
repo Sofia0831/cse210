@@ -56,12 +56,21 @@ public abstract class Activity
 
     public void ShowSpinner(int seconds)
     {
-        Console.Write("Loading");
-        for (int i = 0; i < seconds; i++)
+        Console.Write("\rLoading ");
+
+        DateTime startTime = DateTime.Now;
+        while (DateTime.Now - startTime < TimeSpan.FromSeconds(seconds))
         {
-            Console.Write(".");
-            Thread.Sleep(1000);
+            Console.Write("\rLoading -");
+            Thread.Sleep(100);
+            Console.Write("\rLoading \\");
+            Thread.Sleep(100);
+            Console.Write("\rLoading |");
+            Thread.Sleep(100);
+            Console.Write("\rLoading /");
+            Thread.Sleep(100);
         }
+        Console.Write("\rLoading ");
         Console.WriteLine();
     }
 
