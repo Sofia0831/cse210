@@ -69,8 +69,9 @@ public abstract class Activity
             Thread.Sleep(100);
             Console.Write("\rLoading /");
             Thread.Sleep(100);
+
         }
-        Console.Write("\rLoading ");
+        Console.Write("\r                ");
         Console.WriteLine();
     }
 
