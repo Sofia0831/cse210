@@ -26,6 +26,7 @@ public class ListingActivity : Activity
         Console.WriteLine($"Reflect on the prompt: {prompt}");
         ShowCountdown(10);
 
+        Console.WriteLine();
         Console.WriteLine("Start listing down what you have reflected:");
         List<string> responses = GetListFromUser();
 

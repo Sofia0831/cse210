@@ -15,10 +15,12 @@ public abstract class Activity
 
     public void Start()
     {
+        Console.Clear();
         DisplayStartingMessage();
 
         Console.WriteLine("Preparing to begin...");
         ShowSpinner(3);
+        Console.WriteLine();
     }
 
     public void SetDuration()
@@ -41,12 +43,14 @@ public abstract class Activity
 
     public void End()
     {
+        Console.WriteLine();
         Console.WriteLine("Great job, I'm proud of you!");
         ShowSpinner(3);
         Console.WriteLine($"Activity Completed: {_name}");
         Console.WriteLine($"Duration: {_duration} seconds");
         ShowSpinner(5);
         Console.WriteLine("Program Ended");
+        Console.WriteLine();
     }
 
 
@@ -68,6 +72,6 @@ public abstract class Activity
             Console.Write($"{i}...");
             System.Threading.Thread.Sleep(1000);
         }
-        Console.WriteLine();
+        Console.WriteLine("");
     }
 }
