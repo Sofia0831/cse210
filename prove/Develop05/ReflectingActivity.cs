@@ -32,12 +32,19 @@ public class ReflectingActivity : Activity
         base.Start();
 
         DisplayPrompt();
+        ShowCountdown(5);
+        Console.WriteLine();
 
-        for (int i = 0; i < GetDuration(); i++)
+        Console.WriteLine("Now let's reflect on some questions about this experience:");
+        int remainingTime = GetDuration();
+
+        while (remainingTime > 0)
         {
             DisplayQuestions();
-            ShowCountdown(20);
-            Console.WriteLine(); 
+            int questionTime = 10;
+            ShowCountdown(questionTime);
+            remainingTime -= questionTime;
+            Console.WriteLine();
         }
 
         base.End();
@@ -60,7 +67,7 @@ public class ReflectingActivity : Activity
     private void DisplayPrompt()
     {
         string prompt = GetRandomPrompt();
-        Console.WriteLine($"Your prompt is: {prompt}");
+        Console.WriteLine($"Reflect on your prompt: {prompt}");
         Console.WriteLine();
     }
 
