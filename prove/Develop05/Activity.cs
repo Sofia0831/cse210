@@ -52,6 +52,7 @@ public abstract class Activity
         ShowSpinner(5);
         Console.WriteLine();
         Console.WriteLine("Program Ended");
+        Console.WriteLine("Thank you for using the program, have a great day!");
         Console.WriteLine();
     }
 
