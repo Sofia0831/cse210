@@ -1,3 +1,5 @@
+// Keeps a log of how many times an activity is performed
+
 public static class ActivityLogger
 {
     private static Dictionary<string, int> activityCounts = new Dictionary<string, int>();
