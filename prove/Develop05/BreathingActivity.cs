@@ -10,13 +10,13 @@ public class BreathingActivity : Activity
 
         Console.WriteLine("Let's begin the breathing exercise");
         Console.WriteLine();
-        int breaths = GetDuration()/6;
+        int breaths = GetDuration()/10;
         for (int i = 0; i < breaths; i++)
         {
             Console.WriteLine("Breathe in...");
-            ShowCountdown(3);
+            ShowCountdown(5);
             Console.WriteLine("Breathe out...");
-            ShowCountdown(3);
+            ShowCountdown(5);
             Console.WriteLine();
         }
         base.End();
