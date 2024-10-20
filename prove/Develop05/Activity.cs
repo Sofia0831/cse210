@@ -34,7 +34,7 @@ public abstract class Activity
 
     private void DisplayStartingMessage()
     {
-        Console.WriteLine($"Welcome to the {_name} Activity");
+        Console.WriteLine($"Welcome to the {_name}");
         Console.WriteLine($"{_description}");
         SetDuration();  
     }
@@ -65,7 +65,7 @@ public abstract class Activity
     {
         for (int i = seconds; i > 0; i--)
         {
-            Console.WriteLine($"{i}");
+            Console.Write($"{i}...");
             System.Threading.Thread.Sleep(1000);
         }
         Console.WriteLine();
