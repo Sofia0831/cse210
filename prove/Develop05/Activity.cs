@@ -46,9 +46,11 @@ public abstract class Activity
         Console.WriteLine();
         Console.WriteLine("Great job, I'm proud of you!");
         ShowSpinner(3);
+        Console.WriteLine();
         Console.WriteLine($"Activity Completed: {_name}");
         Console.WriteLine($"Duration: {_duration} seconds");
         ShowSpinner(5);
+        Console.WriteLine();
         Console.WriteLine("Program Ended");
         Console.WriteLine();
     }
