@@ -23,7 +23,7 @@ public abstract class Activity
         Console.WriteLine();
     }
 
-    public void SetDuration()
+    private void SetDuration()
     {
         Console.Write("Enter the duration (in seconds) you want to spend doing this activity: ");
         _duration = int.Parse(Console.ReadLine());

@@ -36,14 +36,14 @@ public class ListingActivity : Activity
         base.End();
     }
 
-    public string GetRandomPrompt()
+    private string GetRandomPrompt()
     {
          Random random = new Random();
         int index = random.Next(_prompts.Count);
         return _prompts[index];
     }
 
-    public List<string> GetListFromUser()
+    private List<string> GetListFromUser()
     {
         List<string> items = new List<string>();
         DateTime startTime = DateTime.Now;
