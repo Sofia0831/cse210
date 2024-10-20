@@ -43,6 +43,7 @@ class Program
             else
             {
                 Console.WriteLine("Please enter a number from the options provided.");
+                Console.WriteLine();
             }
         }
     }
