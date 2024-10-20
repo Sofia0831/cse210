@@ -59,13 +59,25 @@ public abstract class Activity
 
     public void ShowSpinner(int seconds)
     {
-        Console.Write("Loading");
-        for (int i = 0; i < seconds; i++)
+        List<string> animationSpin = new List<string>();
         {
-            Console.Write(".");
-            Thread.Sleep(1000);
+            animationSpin.Add("|");
+            animationSpin.Add("/");
+            animationSpin.Add("-");
+            animationSpin.Add("\\");
+            animationSpin.Add("|");
+            animationSpin.Add("/");
+            animationSpin.Add("-");
+            animationSpin.Add("\\");
+            animationSpin.Add("|");
+            animationSpin.Add("/");
         }
-        Console.WriteLine();
+        foreach (string s in animationSpin)
+        {
+            Console.Write(s);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+        }
     }
 
     public void ShowCountdown(int seconds)
