@@ -1,11 +1,8 @@
-using System;
-using System.Collections.Generic;
-
 public abstract class Activity 
 {
-    protected string _name;
-    protected string _description;
-    protected int _duration;
+    private string _name;
+    private string _description;
+    private int _duration;
 
     public Activity(string name, string description)
     {
