@@ -36,7 +36,8 @@ public class ReflectingActivity : Activity
         for (int i = 0; i < GetDuration(); i++)
         {
             DisplayQuestions();
-            ShowSpinner(10); 
+            ShowCountdown(20);
+            Console.WriteLine(); 
         }
 
         base.End();
@@ -67,7 +68,6 @@ public class ReflectingActivity : Activity
     {
         string question = GetRandomQuestion();
         Console.WriteLine($"{question}");
-        Console.WriteLine();
     }
 
 
