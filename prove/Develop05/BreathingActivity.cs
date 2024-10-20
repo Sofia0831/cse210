@@ -20,5 +20,6 @@ public class BreathingActivity : Activity
             Console.WriteLine();
         }
         base.End();
+        ActivityLogger.LogActivityCompletion("Breathing Activity");
     }
 }

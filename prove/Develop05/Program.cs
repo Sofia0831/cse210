@@ -47,5 +47,7 @@ class Program
             }
         }
 
+        ActivityLogger.DisplayActivityCounts();
+
     }
 }

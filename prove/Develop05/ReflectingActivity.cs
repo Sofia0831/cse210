@@ -48,6 +48,7 @@ public class ReflectingActivity : Activity
         }
 
         base.End();
+        ActivityLogger.LogActivityCompletion("Reflecting Activity");
     }
 
     private string GetRandomPrompt()

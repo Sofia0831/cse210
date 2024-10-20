@@ -34,6 +34,7 @@ public class ListingActivity : Activity
         Console.WriteLine($"You listed {totalItems} items.");
 
         base.End();
+        ActivityLogger.LogActivityCompletion("Listing Activity");
     }
 
     private string GetRandomPrompt()
