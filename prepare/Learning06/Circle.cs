@@ -9,6 +9,6 @@ public class Circle : Shape
 
     public override double GetArea()
     {
-        return _radius*_radius*Math.PI;
+        return Math.Round((_radius*_radius*Math.PI), 2);
     }
 }
