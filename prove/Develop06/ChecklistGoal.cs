@@ -39,6 +39,6 @@ public class CheckListGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        return $"[{(_amountCompleted >= _target ? "X" : " ")}] {GetDetailString()} (Completed {_amountCompleted}/{_target})";
+        return $"[{(_amountCompleted >= _target ? "X" : " ")}] {GetDetailString()} -- Completed {_amountCompleted}/{_target}";
     }
 }
