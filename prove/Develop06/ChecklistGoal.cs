@@ -13,6 +13,11 @@ public class CheckListGoal : Goal
 
      public override void RecordEvent(List<Goal> goals)
     {
+        if (_amountCompleted >= _target)
+        {
+            Console.WriteLine("This checklist goal is already complete.");
+            return;
+        }
         _amountCompleted++;
     }
 
