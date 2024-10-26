@@ -65,6 +65,8 @@ public class GoalManager
 
     public void ListGoalNames()
     {
+        Console.WriteLine();
+        Console.WriteLine("Your list of goals: ");
         int index = 1;
         foreach (var goal in _goals)
         {
@@ -137,11 +139,6 @@ public class GoalManager
         _score += points;
     }
 
-    public void AddBonusPoints(int bonus)
-    {
-        _score += bonus;
-    }
-
     public int GetTotal()
     {
         return _score;
@@ -151,25 +148,25 @@ public class GoalManager
     {
         ListGoalNames();
         Console.Write("Which goal did you accomplish? ");
-        int index = int.Parse(Console.ReadLine()) - 1;
+        int input = int.Parse(Console.ReadLine()) - 1;
 
         
-    if (index >= 0 && index < _goals.Count)
+    if (input >= 0 && input < _goals.Count)
     {
-        _goals[index].RecordEvent(_goals);
-        _score += _goals[index].GetPoints();
+        _goals[input].RecordEvent(_goals);
+        _score += _goals[input].GetPoints();
 
-        if (_goals[index] is CheckListGoal checklistGoal && checklistGoal.IsComplete())
+        if (_goals[input] is CheckListGoal checklistGoal && checklistGoal.IsComplete())
         {
             _score += checklistGoal.GetBonusPoints();
             Console.WriteLine($"Congratulations! You've completed the checklist goal and earned a bonus of {checklistGoal.GetBonusPoints()} points.");
         }
 
-        Console.WriteLine($"Event recorded successfully. Your current score is: {_score}");
+        Console.WriteLine($"Event recorded successfully.");
     }
     else
     {
-        Console.WriteLine("Invalid index.");
+        Console.WriteLine("Invalid input");
     }
     
     }
