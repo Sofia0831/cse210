@@ -12,12 +12,12 @@ public class GoalManager
     public void Start()
     {
         Console.WriteLine("Welcome to the Goal Tracker Program!");
-        DisplayPLayerInfo();
-        Console.WriteLine();
 
         while (true)
         {
-
+            Console.WriteLine();
+            DisplayPLayerInfo();
+            Console.WriteLine();
             Console.WriteLine("What would you like to do? ");
             Console.WriteLine("Menu Options: ");
             Console.WriteLine("1. Create New Goal");
@@ -74,6 +74,7 @@ public class GoalManager
 
     public void ListGoalDetails()
     {
+        Console.WriteLine();
         foreach(var goal in _goals)
         {
             Console.WriteLine(goal.GetStringRepresentation());
@@ -82,6 +83,7 @@ public class GoalManager
 
     public void CreateGoal()
     {
+        Console.WriteLine();
         Console.WriteLine("The types of goals are:");
         Console.WriteLine("1. Simple Goal");
         Console.WriteLine("2. Eternal Goal");
@@ -135,6 +137,11 @@ public class GoalManager
         _score += points;
     }
 
+    public void AddBonusPoints(int bonus)
+    {
+        _score += bonus;
+    }
+
     public int GetTotal()
     {
         return _score;
@@ -146,12 +153,24 @@ public class GoalManager
         Console.Write("Which goal did you accomplish? ");
         int index = int.Parse(Console.ReadLine()) - 1;
 
-        int goalPoints = _goals[index].GetPoints();
-        AddPoints(goalPoints);
-
+        
+    if (index >= 0 && index < _goals.Count)
+    {
         _goals[index].RecordEvent(_goals);
+        _score += _goals[index].GetPoints();
 
-        Console.WriteLine($"Congratulations, you have earned {GetTotal()} points!");
+        if (_goals[index] is CheckListGoal checklistGoal && checklistGoal.IsComplete())
+        {
+            _score += checklistGoal.GetBonusPoints();
+            Console.WriteLine($"Congratulations! You've completed the checklist goal and earned a bonus of {checklistGoal.GetBonusPoints()} points.");
+        }
+
+        Console.WriteLine($"Event recorded successfully. Your current score is: {_score}");
+    }
+    else
+    {
+        Console.WriteLine("Invalid index.");
+    }
     
     }
 
