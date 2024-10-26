@@ -11,7 +11,7 @@ public class CheckListGoal : Goal
         _amountCompleted = 0;
     }
 
-     public override void RecordEvent()
+     public override void RecordEvent(List<Goal> goals)
     {
         _amountCompleted++;
     }

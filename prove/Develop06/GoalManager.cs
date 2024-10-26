@@ -65,10 +65,11 @@ public class GoalManager
 
     public void ListGoalNames()
     {
-            foreach(var goal in _goals)
-            {
-                Console.WriteLine(goal.GetName());
-            }
+        int index = 1;
+        foreach (var goal in _goals)
+        {
+            Console.WriteLine($"{index++}. {goal.GetName()}");
+        }
     }
 
     public void ListGoalDetails()
@@ -129,9 +130,29 @@ public class GoalManager
 
     }
 
+    public void AddPoints(int points)
+    {
+        _score += points;
+    }
+
+    public int GetTotal()
+    {
+        return _score;
+    }
+
     public void RecordEvent()
     {
+        ListGoalNames();
+        Console.Write("Which goal did you accomplish? ");
+        int index = int.Parse(Console.ReadLine()) - 1;
 
+        int goalPoints = _goals[index].GetPoints();
+        AddPoints(goalPoints);
+
+        _goals[index].RecordEvent(_goals);
+
+        Console.WriteLine($"Congratulations, you have earned {GetTotal()} points!");
+    
     }
 
     public void SaveEvent()

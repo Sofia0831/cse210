@@ -11,7 +11,7 @@ public abstract class Goal
         _points = points;
     }
 
-    public abstract void RecordEvent();
+    public abstract void RecordEvent(List<Goal> goals);
 
     public abstract bool IsComplete();
 
@@ -27,5 +27,9 @@ public abstract class Goal
         return _shortName;
     }
 
+    public int GetPoints()
+    {
+        return _points;
+    }
 
 }

@@ -7,7 +7,7 @@ public class SimpleGoal : Goal
         _isComplete = false;
     }
 
-    public override void RecordEvent()
+    public override void RecordEvent(List<Goal> goals)
     {
         _isComplete = true;
     }

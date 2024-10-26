@@ -7,7 +7,7 @@ public class EternalGoal : Goal
         _eventCount = 0;
     }
 
-    public override void RecordEvent()
+    public override void RecordEvent(List<Goal> goals)
     {
         _eventCount++;
     }
