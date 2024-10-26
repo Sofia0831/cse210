@@ -6,7 +6,7 @@ class Program
     {
         Console.WriteLine("Hello Develop06 World!");
 
-        SimpleGoal goal = new SimpleGoal("Run Marathon", "Complete a full marathon", "1000");
+        SimpleGoal goal = new SimpleGoal("Run Marathon", "Complete a full marathon", 1000);
 
         Console.WriteLine(goal.GetStringRepresentation());
 
