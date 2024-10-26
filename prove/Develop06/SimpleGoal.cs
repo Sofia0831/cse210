@@ -9,12 +9,6 @@ public class SimpleGoal : Goal
 
     public override void RecordEvent(List<Goal> goals)
     {
-        if (_isComplete)
-        {
-            Console.WriteLine("This goal is already complete.");
-            return;
-        }
-
         _isComplete = true;
     }
 
