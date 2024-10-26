@@ -1,0 +1,50 @@
+public class GoalManager
+{
+    private List<Goal> _goals;
+    private int _score;
+
+    public GoalManager()
+    {
+
+    }
+
+    public void Start()
+    {
+
+    }
+
+    public void DisplayPLayerInfo()
+    {
+
+    }
+
+    public void ListGoalNames()
+    {
+
+    }
+
+    public void ListGoalDetails()
+    {
+
+    }
+
+    public void CreateGoal()
+    {
+
+    }
+
+    public void RecordEvent()
+    {
+
+    }
+
+    public void SaveEvent()
+    {
+
+    }
+
+    public void LoadGoals()
+    {
+        
+    }
+}
