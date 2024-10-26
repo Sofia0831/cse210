@@ -27,5 +27,7 @@ class Program
         Console.WriteLine(goal2.GetStringRepresentation());
         Console.WriteLine(goal3.GetStringRepresentation());
 
+        Console.WriteLine(goal.GetDetailString());
+
     }
 }
