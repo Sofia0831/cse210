@@ -31,33 +31,37 @@ public class GoalManager
             Console.WriteLine("6. Quit");
             Console.Write("Select an option from the menu (1-6): ");
 
-             int choice = int.Parse(Console.ReadLine());
+             int choice;
+             while (!int.TryParse(Console.ReadLine(), out choice))
+            {
+                Console.WriteLine("Invalid input. Please enter a number between 1 and 6.");
+            }
 
-                switch (choice)
-                {
-                    case 1:
-                        CreateGoal();
-                        break;
-                    case 2:
-                        ListGoalDetails();
-                        break;
-                    case 3:
-                        SaveEvent();
-                        break;
-                    case 4:
-                        LoadGoals();
-                        break;
-                    case 5:
-                        RecordEvent();
-                        break;
-                    case 6:
-                        Console.WriteLine("Thank you for using the program!");
-                        Environment.Exit(0);
-                        break;
-                    default:
-                        Console.WriteLine("Invalid choice.");
-                        break;
-                }
+            switch (choice)
+            {
+                case 1:
+                    CreateGoal();
+                    break;
+                case 2:
+                    ListGoalDetails();
+                    break;
+                case 3:
+                    SaveEvent();
+                    break;
+                case 4:
+                    LoadGoals();
+                    break;
+                case 5:
+                    RecordEvent();
+                    break;
+                case 6:
+                    Console.WriteLine("Thank you for using the program!");
+                    Environment.Exit(0);
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice.");
+                    break;
+            }
         }
 
     }
