@@ -8,6 +8,11 @@ public class SimpleGoal : Goal
         _isComplete = false;
     }
 
+    public bool Finished()
+    {
+        return _isComplete;
+    }
+
     public override void RecordEvent(List<Goal> goals)
     {
         _isComplete = true;

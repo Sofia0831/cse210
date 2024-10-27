@@ -1,0 +1,4 @@
+100
+Simple Goal:, Assignment, Finish WDD 131 Assignment, 100, True
+Eternal Goal:, Study, Read the scriptures for at least 10 minutes, 30, False
+Checklist Goal:, Temple Visit, Perform an ordinance, 50, False, 3, 100

@@ -51,7 +51,7 @@ public class CheckListGoal : Goal
 
     public override string SaveGoal()
     {
-        return $"{_type}, {GetName()}, {GetDescription()}, {GetPoints()}, {IsComplete()}";
+        return $"{_type}, {GetName()}, {GetDescription()}, {GetPoints()}, {IsComplete()}, {GetTarget()}, {GetBonusPoints()}";
     }
 
     public override string LoadGoal()

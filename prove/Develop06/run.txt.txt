@@ -1,2 +1,0 @@
-0
-Simple Goal:, run, run, 50, False
