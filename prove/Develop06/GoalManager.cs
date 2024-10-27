@@ -48,6 +48,7 @@ public class GoalManager
                         RecordEvent();
                         break;
                     case 6:
+                        Console.WriteLine("Thank you for using the program!");
                         Environment.Exit(0);
                         break;
                     default:
@@ -195,7 +196,7 @@ public class GoalManager
                         Console.WriteLine("Invalid input. Please enter a valid integer.");
                     }
                 }
-                
+
                 _goals.Add(new CheckListGoal(checklistName, checklistDescription, checklistPoints, checklistTarget, checklistBonus));
                 break;
             default:
