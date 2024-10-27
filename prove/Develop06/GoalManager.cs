@@ -34,6 +34,7 @@ public class GoalManager
             int choice;
             while (!int.TryParse(Console.ReadLine(), out choice))
             {
+                Console.WriteLine();
                 Console.WriteLine("Invalid input. Please enter a number between 1 and 6.");
                 Console.Write("Select an option from the menu (1-6): ");
             }
@@ -104,6 +105,7 @@ public class GoalManager
         int choice;
         while (!int.TryParse(Console.ReadLine(), out choice))
         {
+            Console.WriteLine();
             Console.WriteLine("Invalid input. Please enter a number between 1 and 3.");
             Console.Write("Choose a type of goal to create: ");
         }
@@ -128,6 +130,7 @@ public class GoalManager
                     }
                     else
                     {
+                        Console.WriteLine();
                         Console.WriteLine("Invalid input. Please enter a valid integer.");
                     }
                 }
@@ -151,6 +154,7 @@ public class GoalManager
                     }
                     else
                     {
+                        Console.WriteLine();
                         Console.WriteLine("Invalid input. Please enter a valid integer.");
                     }
                 }
@@ -174,6 +178,7 @@ public class GoalManager
                     }
                     else
                     {
+                        Console.WriteLine();
                         Console.WriteLine("Invalid input. Please enter a valid integer.");
                     }
                 }
@@ -190,6 +195,7 @@ public class GoalManager
                     }
                     else
                     {
+                        Console.WriteLine();
                         Console.WriteLine("Invalid input. Please enter a valid integer.");
                     }
                 }
