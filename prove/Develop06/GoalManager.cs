@@ -311,7 +311,7 @@ public class GoalManager
 
                 if (data[0] == "Simple Goal:")
                 {
-                    SimpleGoal simple = new SimpleGoal(name, description, points);
+                    SimpleGoal simple = new SimpleGoal(name, description, points, status);
                     _goals.Add(simple);
                 }
                 if (data[0] == "Eternal Goal:")
