@@ -1,5 +1,6 @@
 public class SimpleGoal : Goal
 {
+    private string _type = "Simple Goal:";
     private bool _isComplete;
 
     public SimpleGoal(string name, string description, int points) : base (name, description, points)
@@ -21,5 +22,14 @@ public class SimpleGoal : Goal
     {
         return $"[{(_isComplete ? "X" : " ")}] {GetDetailString()}";
     }
-    
+
+    public override string SaveGoal()
+    {
+        return $"{_type}, {GetName()}, {GetDescription()}, {GetPoints()}, {_isComplete}";
+    }
+
+    public override string LoadGoal()
+    {
+        return $"{_type}, {GetName()}, {GetDescription()}, {GetPoints()}, {_isComplete}";
+    }
 }

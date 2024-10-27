@@ -1,5 +1,6 @@
 public class CheckListGoal : Goal 
 {
+    private string _type = "Checklist Goal";
     private int _amountCompleted;
     private int _target;
     private int _bonus;
@@ -22,6 +23,16 @@ public class CheckListGoal : Goal
         return _bonus;
     }
 
+    public int GetTarget()
+    {
+        return _target;
+    }
+
+    public int GetAmountCompleted()
+    {
+        return _amountCompleted;
+    }
+
     public override bool IsComplete()
     {
         return _amountCompleted >= _target;
@@ -36,5 +47,15 @@ public class CheckListGoal : Goal
     public override string GetStringRepresentation()
     {
         return $"[{(_amountCompleted >= _target ? "X" : " ")}] {GetDetailString()} -- Completed {_amountCompleted}/{_target}";
+    }
+
+    public override string SaveGoal()
+    {
+        return $"{_type}, {GetName()}, {GetDescription()}, {GetPoints()}, {IsComplete()}";
+    }
+
+    public override string LoadGoal()
+    {
+        return $"{_type}, {GetName()}, {GetDescription()}, {GetPoints()}, {IsComplete()}, {GetBonusPoints()}, {GetTarget()}, {GetAmountCompleted()}";
     }
 }

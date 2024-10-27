@@ -32,4 +32,12 @@ public abstract class Goal
         return _points;
     }
 
+    public string GetDescription()
+    {
+        return _description;
+    }
+
+    public abstract string SaveGoal();
+    public abstract string LoadGoal();
+
 }

@@ -1,5 +1,6 @@
 public class EternalGoal : Goal
 {
+    private string _type = "Eternal Goal";
     private int _eventCount;
 
     public EternalGoal(string name, string description, int points): base(name, description, points)
@@ -21,5 +22,15 @@ public class EternalGoal : Goal
     public override string GetStringRepresentation()
     {
         return $"[ ] {GetDetailString()} (Recorded {_eventCount} times)";
+    }
+
+    public override string SaveGoal()
+    {
+        return $"{_type}, {GetName()}, {GetDescription()}, {GetPoints()}, {IsComplete()}";
+    }
+
+    public override string LoadGoal()
+    {
+        return $"{_type}, {GetName()}, {GetDescription()}, {GetPoints()}, {IsComplete()}";
     }
 }

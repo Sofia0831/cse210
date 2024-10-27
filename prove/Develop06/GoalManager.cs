@@ -1,3 +1,6 @@
+using System;
+using System.IO;
+
 public class GoalManager
 {
     private List<Goal> _goals;
@@ -254,11 +257,84 @@ public class GoalManager
 
     public void SaveEvent()
     {
+        Console.WriteLine("Enter a name for your file: ");
+        string userName = Console.ReadLine();
+        string fileName = userName + ".txt";
 
+        using (StreamWriter savedFile = new StreamWriter(fileName))
+        {
+            savedFile.WriteLine(GetTotal());
+
+            foreach (Goal goal in _goals)
+            {
+                savedFile.WriteLine(goal.SaveGoal());
+            }
+        }
     }
-
     public void LoadGoals()
     {
-        
+        Console.WriteLine("Enter the name of your file: ");
+        string userName = Console.ReadLine();
+        string fileName = userName + ".txt";
+
+        try
+    {
+        using (StreamReader reader = new StreamReader(fileName))
+        {
+            // Read the total from the first line
+            string totalLine = reader.ReadLine();
+            int total = int.Parse(totalLine);
+
+            // Clear the existing goals list before loading new ones
+            _goals.Clear();
+
+            // Read the rest of the lines, each representing a Goal
+            string line;
+            while ((line = reader.ReadLine()) != null)
+            {
+                // Parse the line to create a Goal object based on the type
+                string[] goalData = line.Split(',');
+
+                // Identify the goal type based on the first element in the data
+                string goalType = goalData[0];
+
+                Goal goal;
+                switch (goalType)
+                {
+                    case "Simple Goal":
+                        goal = new SimpleGoal(goalData[1], goalData[2], int.Parse(goalData[3]));
+                        break;
+                    case "Eternal Goal":
+                        goal = new EternalGoal(goalData[1], goalData[2], int.Parse(goalData[3]));
+                        break;
+                    case "Checklist Goal":
+                        goal = new CheckListGoal(goalData[1], goalData[2], int.Parse(goalData[3]), int.Parse(goalData[4]), int.Parse(goalData[5]));
+                        break;
+                    default:
+                        Console.WriteLine($"Warning: Unknown goal type: {goalType}");
+                        continue; // Skip to the next line if unknown type
+                }
+
+                // Add the created goal to the _goals list
+                _goals.Add(goal);
+            }
+
+            Console.WriteLine("Goals loaded successfully!");
+        }
+        }
+        catch (FileNotFoundException)
+        {
+            Console.WriteLine("File not found. Please check the filename and try again.");
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Error parsing file. Please ensure the file format is correct.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("An error occurred while loading goals: " + ex.Message);
+    }
+
+    
     }
 }
