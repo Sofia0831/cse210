@@ -158,7 +158,7 @@ public class GoalManager
             _goals[input].RecordEvent(_goals);
             _score += _goals[input].GetPoints();
 
-            Console.WriteLine($"Event recorded successfully! You earned {_score} points!");
+            Console.WriteLine($"Event recorded successfully! You earned {_goals[input].GetPoints()} points!");
 
             // Check for bonus points for completed checklist goals
             if (_goals[input] is CheckListGoal checklistGoal && checklistGoal.IsComplete())
