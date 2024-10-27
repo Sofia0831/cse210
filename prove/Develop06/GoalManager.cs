@@ -86,10 +86,17 @@ public class GoalManager
 
     public void ListGoalDetails()
     {
-        Console.WriteLine();
-        foreach(var goal in _goals)
+        if (_goals.Count == 0)
         {
-            Console.WriteLine(goal.GetStringRepresentation());
+            Console.WriteLine("You have no goals to show yet.");
+        }
+        else
+        {
+            Console.WriteLine();
+            foreach (var goal in _goals)
+            {
+                Console.WriteLine(goal.GetStringRepresentation());
+            }
         }
     }
 
@@ -278,6 +285,12 @@ public class GoalManager
 
     public void SaveEvent()
     {
+        if (_goals.Count == 0)
+        {
+            Console.WriteLine("There are no goals to save.");
+            return;
+        }
+
         Console.Write("Enter a name for your file: ");
         string userName = Console.ReadLine();
         string fileName = userName + ".txt";
@@ -337,6 +350,10 @@ public class GoalManager
                     _goals.Add(checkList);
                 }
             }
+        }
+        else
+        {
+            Console.WriteLine("File not found. Please check the filename and try again.");
         }
     
     }
