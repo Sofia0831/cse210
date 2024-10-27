@@ -75,13 +75,21 @@ public class GoalManager
 
     public void ListGoalNames()
     {
-        Console.WriteLine();
-        Console.WriteLine("Your list of goals: ");
-        int index = 1;
-        foreach (var goal in _goals)
+        if (_goals.Count == 0)
         {
-            Console.WriteLine($"{index++}. {goal.GetName()}");
+            Console.WriteLine("You have no goals to show yet.");
         }
+        else
+        {
+            Console.WriteLine();
+            Console.WriteLine("Your list of goals: ");
+            int index = 1;
+            foreach (var goal in _goals)
+            {
+                Console.WriteLine($"{index++}. {goal.GetName()}");
+            }
+        }
+    
     }
 
     public void ListGoalDetails()
@@ -107,6 +115,7 @@ public class GoalManager
         Console.WriteLine("1. Simple Goal");
         Console.WriteLine("2. Eternal Goal");
         Console.WriteLine("3. Checklist Goal");
+        Console.WriteLine("4. Never mind");
         Console.Write("Choose a type of goal to create: ");
 
         int choice;
@@ -225,6 +234,11 @@ public class GoalManager
 
                 _goals.Add(new CheckListGoal(checklistName, checklistDescription, checklistPoints, checklistTarget, checklistBonus));
                 break;
+
+            case 4:
+                Console.WriteLine("Goal creation canceled.");
+                return;
+
             default:
                 Console.WriteLine("Invalid choice.");
                 break;
