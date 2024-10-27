@@ -78,6 +78,7 @@ public class GoalManager
         if (_goals.Count == 0)
         {
             Console.WriteLine("You have no goals to show yet.");
+            return;
         }
         else
         {
