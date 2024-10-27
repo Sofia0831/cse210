@@ -377,10 +377,6 @@ public class GoalManager
                 }
             }
         }
-        else
-        {
-            Console.WriteLine("File not found. Please check the filename and try again.");
-        }
     
     }
 
