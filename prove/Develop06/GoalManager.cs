@@ -392,16 +392,16 @@ public class GoalManager
             Console.WriteLine("You have no goals to delete.");
             return;
         }
-    
-        ListGoalDetails();
-    
+
+        ListGoalNames();
+
         Console.Write("Enter the number of the goal you want to delete: ");
         int index;
         while (!int.TryParse(Console.ReadLine(), out index) || index < 1 || index > _goals.Count)
         {
             Console.WriteLine("Invalid input. Please enter a valid goal number.");
         }
-    
+
         _goals.RemoveAt(index - 1);
         Console.WriteLine("Goal deleted successfully.");
 
