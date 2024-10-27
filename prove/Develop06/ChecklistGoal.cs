@@ -28,6 +28,11 @@ public class CheckListGoal : Goal
         _amountCompleted++;
     }
 
+    public override bool IsComplete()
+    {
+        return _amountCompleted >= _target;
+    }
+
     public int GetBonusPoints()
     {
         return _bonus;
@@ -41,11 +46,6 @@ public class CheckListGoal : Goal
     public int GetAmountCompleted()
     {
         return _amountCompleted;
-    }
-
-    public override bool IsComplete()
-    {
-        return _amountCompleted >= _target;
     }
 
     public override string GetDetailString()
