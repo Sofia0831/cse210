@@ -1,6 +1,6 @@
 public class CheckListGoal : Goal 
 {
-    private string _type = "Checklist Goal";
+    private string _type = "Checklist Goal:";
     private int _amountCompleted;
     private int _target;
     private int _bonus;

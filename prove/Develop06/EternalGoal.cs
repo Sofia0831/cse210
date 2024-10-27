@@ -1,6 +1,6 @@
 public class EternalGoal : Goal
 {
-    private string _type = "Eternal Goal";
+    private string _type = "Eternal Goal:";
     private int _eventCount;
 
     public EternalGoal(string name, string description, int points): base(name, description, points)
