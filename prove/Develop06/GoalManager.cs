@@ -100,7 +100,11 @@ public class GoalManager
         Console.WriteLine("3. Checklist Goal");
         Console.Write("Choose a type of goal to create: ");
 
-        int choice = int.Parse(Console.ReadLine());
+        int choice;
+        while (!int.TryParse(Console.ReadLine(), out choice))
+        {
+            Console.WriteLine("Invalid input. Please enter a number between 1 and 3.");
+        }
 
         switch (choice)
         {
