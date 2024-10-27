@@ -28,15 +28,16 @@ public class GoalManager
             Console.WriteLine("3. Save Goals");
             Console.WriteLine("4. Load Goals");
             Console.WriteLine("5. Record Event");
-            Console.WriteLine("6. Quit");
-            Console.Write("Select an option from the menu (1-6): ");
+            Console.WriteLine("6. Delete Goal");
+            Console.WriteLine("7. Quit");
+            Console.Write("Select an option from the menu (1-7): ");
 
             int choice;
             while (!int.TryParse(Console.ReadLine(), out choice))
             {
                 Console.WriteLine();
-                Console.WriteLine("Invalid input. Please enter a number between 1 and 6.");
-                Console.Write("Select an option from the menu (1-6): ");
+                Console.WriteLine("Invalid input. Please enter a number between 1 and 7.");
+                Console.Write("Select an option from the menu (1-7): ");
             }
 
             switch (choice)
@@ -57,6 +58,9 @@ public class GoalManager
                     RecordEvent();
                     break;
                 case 6:
+                    DeleteGoal();
+                    break;
+                case 7:
                     Console.WriteLine("Thank you for using the program!");
                     Environment.Exit(0);
                     break;
@@ -272,17 +276,17 @@ public class GoalManager
             ListGoalNames();
             Console.Write("Which goal did you accomplish? ");
             int input = int.Parse(Console.ReadLine()) - 1;
-    
-            
+
+
             if (input >= 0 && input < _goals.Count)
             {
                 if (!_goals[input].IsComplete())
                 {
                     _goals[input].RecordEvent(_goals);
                     _score += _goals[input].GetPoints();
-        
+
                     Console.WriteLine($"Event recorded successfully! You earned {_goals[input].GetPoints()} points!");
-        
+
                     // Check for bonus points for completed checklist goals
                     if (_goals[input] is CheckListGoal checklistGoal && checklistGoal.IsComplete())
                     {
@@ -294,7 +298,7 @@ public class GoalManager
                 {
                     Console.WriteLine("This goal is already complete.");
                 }
-        
+
             }
             else
             {
@@ -378,5 +382,28 @@ public class GoalManager
             Console.WriteLine("File not found. Please check the filename and try again.");
         }
     
+    }
+
+    // Added option to delete a goal
+    public void DeleteGoal()
+    {
+        if (_goals.Count == 0)
+        {
+            Console.WriteLine("You have no goals to delete.");
+            return;
+        }
+    
+        ListGoalDetails();
+    
+        Console.Write("Enter the number of the goal you want to delete: ");
+        int index;
+        while (!int.TryParse(Console.ReadLine(), out index) || index < 1 || index > _goals.Count)
+        {
+            Console.WriteLine("Invalid input. Please enter a valid goal number.");
+        }
+    
+        _goals.RemoveAt(index - 1);
+        Console.WriteLine("Goal deleted successfully.");
+
     }
 }
