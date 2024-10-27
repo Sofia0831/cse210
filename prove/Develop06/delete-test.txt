@@ -1,0 +1,3 @@
+470
+Simple Goal:, Assignment, finish assignment, 100, True
+Checklist Goal:, Temple, visit, 50, True, 3, 100, 3
