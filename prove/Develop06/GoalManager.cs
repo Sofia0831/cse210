@@ -101,8 +101,22 @@ public class GoalManager
                 string simpleName = Console.ReadLine();
                 Console.Write("Enter goal description: ");
                 string simpleDescription = Console.ReadLine();
-                Console.Write("Enter points for completion: ");
-                int simplePoints = int.Parse(Console.ReadLine());
+
+                int simplePoints;
+                while (true)
+                {
+                    Console.Write("Enter points for completion: ");
+                    string input = Console.ReadLine();
+    
+                    if (int.TryParse(input, out simplePoints))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid input. Please enter a valid integer.");
+                    }
+                }
                 _goals.Add(new SimpleGoal(simpleName,simpleDescription, simplePoints));
                 break;
             case 2:
@@ -110,8 +124,22 @@ public class GoalManager
                 string eternalName = Console.ReadLine();
                 Console.Write("Enter goal description: ");
                 string eternalDescription = Console.ReadLine();
-                Console.Write("Enter points per event: ");
-                int eternalPoints = int.Parse(Console.ReadLine());
+
+                int eternalPoints;
+                while (true)
+                {
+                    Console.Write("Enter points per event: ");
+                    string input = Console.ReadLine();
+    
+                    if (int.TryParse(input, out eternalPoints))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid input. Please enter a valid integer.");
+                    }
+                }
                 _goals.Add(new EternalGoal(eternalName, eternalDescription, eternalPoints));
                 break;
             case 3:
@@ -119,12 +147,55 @@ public class GoalManager
                 string checklistName = Console.ReadLine();
                 Console.Write("Enter goal description: ");
                 string checklistDescription = Console.ReadLine();
-                Console.Write("Enter points per completion: ");
-                int checklistPoints = int.Parse(Console.ReadLine());
-                Console.Write("Enter target completions: ");
-                int checklistTarget = int.Parse(Console.ReadLine());
-                Console.Write("Enter bonus points for completion: ");
-                int checklistBonus = int.Parse(Console.ReadLine());
+
+                int checklistPoints;
+                while (true)
+                {
+                    Console.Write("Enter points for completion: ");
+                    string input = Console.ReadLine();
+    
+                    if (int.TryParse(input, out checklistPoints))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid input. Please enter a valid integer.");
+                    }
+                }
+
+                int checklistTarget;
+                while (true)
+                {
+                    Console.Write("Enter target completions: ");
+                    string input = Console.ReadLine();
+    
+                    if (int.TryParse(input, out checklistTarget))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid input. Please enter a valid integer.");
+                    }
+                }
+
+                int checklistBonus;
+                while (true)
+                {
+                    Console.Write("Enter bonus points for completion: ");
+                    string input = Console.ReadLine();
+    
+                    if (int.TryParse(input, out checklistBonus))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid input. Please enter a valid integer.");
+                    }
+                }
+                
                 _goals.Add(new CheckListGoal(checklistName, checklistDescription, checklistPoints, checklistTarget, checklistBonus));
                 break;
             default:
