@@ -78,17 +78,16 @@ public class GoalManager
         if (_goals.Count == 0)
         {
             Console.WriteLine("You have no goals to show yet.");
-            return;
         }
         else
         {
             Console.WriteLine();
-            Console.WriteLine("Your list of goals: ");
-            int index = 1;
-            foreach (var goal in _goals)
-            {
-                Console.WriteLine($"{index++}. {goal.GetName()}");
-            }
+        Console.WriteLine("Your list of goals: ");
+        int index = 1;
+        foreach (var goal in _goals)
+        {
+            Console.WriteLine($"{index++}. {goal.GetName()}");
+        }
         }
     
     }
@@ -264,37 +263,45 @@ public class GoalManager
 
     public void RecordEvent()
     {
-        ListGoalNames();
-        Console.Write("Which goal did you accomplish? ");
-        int input = int.Parse(Console.ReadLine()) - 1;
-
-        
-    if (input >= 0 && input < _goals.Count)
-    {
-        if (!_goals[input].IsComplete())
+        if (_goals.Count == 0)
         {
-            _goals[input].RecordEvent(_goals);
-            _score += _goals[input].GetPoints();
-
-            Console.WriteLine($"Event recorded successfully! You earned {_goals[input].GetPoints()} points!");
-
-            // Check for bonus points for completed checklist goals
-            if (_goals[input] is CheckListGoal checklistGoal && checklistGoal.IsComplete())
+            Console.WriteLine("You have no goals yet.");
+        }
+        else 
+        {
+            ListGoalNames();
+            Console.Write("Which goal did you accomplish? ");
+            int input = int.Parse(Console.ReadLine()) - 1;
+    
+            
+            if (input >= 0 && input < _goals.Count)
             {
-                _score += checklistGoal.GetBonusPoints();
-                Console.WriteLine($"Congratulations! You've completed the checklist goal and earned a bonus of {checklistGoal.GetBonusPoints()} points.");
+                if (!_goals[input].IsComplete())
+                {
+                    _goals[input].RecordEvent(_goals);
+                    _score += _goals[input].GetPoints();
+        
+                    Console.WriteLine($"Event recorded successfully! You earned {_goals[input].GetPoints()} points!");
+        
+                    // Check for bonus points for completed checklist goals
+                    if (_goals[input] is CheckListGoal checklistGoal && checklistGoal.IsComplete())
+                    {
+                        _score += checklistGoal.GetBonusPoints();
+                        Console.WriteLine($"Congratulations! You've completed the checklist goal and earned a bonus of {checklistGoal.GetBonusPoints()} points.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("This goal is already complete.");
+                }
+        
+            }
+            else
+            {
+                Console.WriteLine("Invalid index.");
             }
         }
-        else
-        {
-            Console.WriteLine("This goal is already complete.");
-        }
 
-    }
-    else
-    {
-        Console.WriteLine("Invalid index.");
-    }
     
     }
 
