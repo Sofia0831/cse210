@@ -8,6 +8,11 @@ public class SimpleGoal : Goal
         _isComplete = false;
     }
 
+    public SimpleGoal(string type, string name, string description, int points, bool status) : base(name, description, points)
+    {
+        _isComplete = status;
+    }
+
     public bool Finished()
     {
         return _isComplete;

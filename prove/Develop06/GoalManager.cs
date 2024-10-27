@@ -317,7 +317,8 @@ public class GoalManager
                 }
                 if (data[0] == "Eternal Goal:")
                 {
-                    EternalGoal eternal = new EternalGoal(name, description, points);
+                    int count = int.Parse(data[5]);
+                    EternalGoal eternal = new EternalGoal(name, description, points, count);
                     _goals.Add(eternal);
                 }
                 if (data[0] == "Checklist Goal:")

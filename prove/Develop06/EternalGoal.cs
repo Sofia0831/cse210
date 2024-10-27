@@ -8,6 +8,11 @@ public class EternalGoal : Goal
         _eventCount = 0;
     }
 
+    public EternalGoal(string name, string description, int points, int count): base(name, description, points)
+    {
+        _eventCount = count;
+    }
+
     public override void RecordEvent(List<Goal> goals)
     {
         _eventCount++;
@@ -26,11 +31,11 @@ public class EternalGoal : Goal
 
     public override string SaveGoal()
     {
-        return $"{_type}, {GetName()}, {GetDescription()}, {GetPoints()}, {IsComplete()}";
+        return $"{_type}, {GetName()}, {GetDescription()}, {GetPoints()}, {IsComplete()}, {_eventCount}";
     }
 
     public override string LoadGoal()
     {
-        return $"{_type}, {GetName()}, {GetDescription()}, {GetPoints()}, {IsComplete()}";
+        return $"{_type}, {GetName()}, {GetDescription()}, {GetPoints()}, {IsComplete()}, {_eventCount}";
     }
 }
