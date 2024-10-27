@@ -1,0 +1,4 @@
+150
+Simple Goal:, Assignment, finish assignment, 100, True
+Eternal Goal:, Study, scriptures, 30, False, 0
+Checklist Goal:, Temple, visit, 50, False, 3, 100, 1

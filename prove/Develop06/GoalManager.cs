@@ -312,7 +312,6 @@ public class GoalManager
                 if (data[0] == "Simple Goal:")
                 {
                     SimpleGoal simple = new SimpleGoal(name, description, points);
-                    simple.IsComplete();
                     _goals.Add(simple);
                 }
                 if (data[0] == "Eternal Goal:")
@@ -325,8 +324,8 @@ public class GoalManager
                 {
                     int target = int.Parse(data[5]);
                     int bonus = int.Parse(data[6]);
-                    CheckListGoal checkList = new CheckListGoal(name, description, points, target, bonus);
-                    checkList.GetAmountCompleted();
+                    int count = int.Parse(data[7]);
+                    CheckListGoal checkList = new CheckListGoal(name, description, points, status, target, bonus, count);
                     _goals.Add(checkList);
                 }
             }

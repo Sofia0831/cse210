@@ -4,12 +4,22 @@ public class CheckListGoal : Goal
     private int _amountCompleted;
     private int _target;
     private int _bonus;
+    private bool _status;
 
     public CheckListGoal(string name, string description, int points, int target, int bonus) : base(name, description, points)
     {
+        _status = false;
         _target = target;
         _bonus = bonus;
         _amountCompleted = 0;
+    }
+
+    public CheckListGoal(string name, string description, int points, bool status, int target, int bonus, int count) : base(name, description, points)
+    {
+        _status = status;
+        _target = target;
+        _bonus = bonus;
+        _amountCompleted = count;
     }
 
      public override void RecordEvent(List<Goal> goals)
@@ -51,11 +61,11 @@ public class CheckListGoal : Goal
 
     public override string SaveGoal()
     {
-        return $"{_type}, {GetName()}, {GetDescription()}, {GetPoints()}, {IsComplete()}, {GetTarget()}, {GetBonusPoints()}";
+        return $"{_type}, {GetName()}, {GetDescription()}, {GetPoints()}, {IsComplete()}, {GetTarget()}, {GetBonusPoints()}, {GetAmountCompleted()}";
     }
 
     public override string LoadGoal()
     {
-        return $"{_type}, {GetName()}, {GetDescription()}, {GetPoints()}, {IsComplete()}, {GetBonusPoints()}, {GetTarget()}, {GetAmountCompleted()}";
+        return $"{_type}, {GetName()}, {GetDescription()}, {GetPoints()}, {IsComplete()}, {GetTarget()}, {GetBonusPoints()}, {GetAmountCompleted()}";
     }
 }
