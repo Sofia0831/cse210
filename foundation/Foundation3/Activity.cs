@@ -17,7 +17,7 @@ public abstract class Activity
 
     public virtual string Summary()
     {
-        return $"{_date} {_name} ({_duration} min) - Distance {CalculateDistance()} km, Speed {CalculateSpeed()} kph, Pace {CalculatePace()} min per km";
+        return $"{_date} {_name} ({_duration} min) - Distance {CalculateDistance():F2} km, Speed {CalculateSpeed():F2} kph, Pace {CalculatePace():F2} min per km";
     }
     
 }
