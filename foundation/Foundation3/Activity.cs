@@ -15,7 +15,7 @@ public abstract class Activity
     public abstract double CalculateSpeed();
     public abstract double CalculatePace();
 
-    public virtual string Summary()
+    public virtual string GetSummary()
     {
         return $"{_date} {_name} ({_duration} min) - Distance {CalculateDistance():F2} km, Speed {CalculateSpeed():F2} kph, Pace {CalculatePace():F2} min per km";
     }
