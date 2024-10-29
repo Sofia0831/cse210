@@ -2,7 +2,7 @@ public class SwimmingActivity : Activity
 {
     private int _laps;
 
-    public SwimmingActivity(DateTime date, string name, int duration, int laps) : base(date, name, duration)
+    public SwimmingActivity(string date, string name, int duration, int laps) : base(date, name, duration)
     {
         _laps = laps;
     }

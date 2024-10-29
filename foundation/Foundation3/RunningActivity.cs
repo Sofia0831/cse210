@@ -2,7 +2,7 @@ public class RunningActivity : Activity
 {
     private double _distance;
 
-    public RunningActivity(DateTime date, string name, int duration, double distance) : base(date, name, duration)
+    public RunningActivity(string date, string name, int duration, double distance) : base(date, name, duration)
     {
         _distance = distance;
     }

@@ -1,10 +1,10 @@
 public abstract class Activity 
 {
     protected string _name;
-    protected DateTime _date;
+    protected string _date;
     protected int _duration;
 
-    public Activity(DateTime date, string name, int duration)
+    public Activity(string date, string name, int duration)
     {
         _date = date;
         _name = name;
@@ -17,7 +17,7 @@ public abstract class Activity
 
     public virtual string Summary()
     {
-        return $"{_date: dd MM yyyy} {_name} ({_duration} min) - Distance {CalculateDistance()} km, Speed {CalculateSpeed()} kph, Pace {CalculatePace()} min per km";
+        return $"{_date} {_name} ({_duration} min) - Distance {CalculateDistance()} km, Speed {CalculateSpeed()} kph, Pace {CalculatePace()} min per km";
     }
     
 }
