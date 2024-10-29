@@ -9,7 +9,7 @@ public class SwimmingActivity : Activity
 
     public override double CalculateDistance()
     {
-        return _laps * 50 / 1000;
+        return _laps * 50 / 1000.0;
     }
 
     public override double CalculatePace()
